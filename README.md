@@ -76,7 +76,7 @@ where a "byte" is at least 8 bits.
 > sequence-of-unsigned-byte/octet-values.*
 
 If you want *bytes*, use `unsigned char`.  If you want *octets*, use
-`uint8_t`.  If `CHAR_BIT > 8` then `uint8_t won't exist, and your
+`uint8_t`.  If `CHAR_BIT > 8` then `uint8_t` won't exist, and your
 code won't compile (which is probably what you want).  If you want
 something that's *at least* 8 bits, use `uint_least8_t`.  If you want
 to assume that bytes are octets, add something like this to your code:
