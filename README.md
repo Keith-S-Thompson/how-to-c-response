@@ -1,9 +1,8 @@
-# A critique of ["How to C in 2016"](https://matt.sh/howto-c) by "matt"
+# A critique of ["How to C in 2016"](https://matt.sh/howto-c) by [Matt Stancliff](http://matt.sh)
 
 ## Keith Thompson Sat 2016-01-09
 
-"matt" (whose web site does not mention his
-last name as far as I can tell) has written an
+Matt Stancliff, an engineer on Redis, has written an
 article "How to C in 2016".  It's been linked to from
 [Reddit](https://www.reddit.com/r/programming/comments/400v0b/how_to_c_as_of_2016/)
 and from [Hacker News](https://news.ycombinator.com/item?id=10864176);
@@ -326,14 +325,14 @@ you want your code to be as portable as possible.
 
 > *If a function accepts **arbitrary** input data and a length to
 > process, don't restrict the type of the parameter.*
-> 
+>
 > *So, do NOT do this:*
 
             void processAddBytesOverflow(uint8_t *bytes, uint32_t len)
 
 > *Do THIS instead:*
 
-            void processAddBytesOverflow(void *input, uint32_t len) 
+            void processAddBytesOverflow(void *input, uint32_t len)
 
 (I've omitted the bodies of the functions.)
 
