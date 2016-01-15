@@ -165,7 +165,7 @@ If you want the difference in bytes:
 
 If `ptrOld` and `ptrNew` don't point into, or just past the end of,
 the same object, the behavior of the pointer subtraction is undefined.
-Converting to `uintprt_t` will give you *some* result -- but that
+Converting to `uintptr_t` will give you *some* result -- but that
 result won't be useful.  Unless you're writing low-level system code,
 don't do *any* pointer comparison or arithmetic unless both pointers
 point into or just past the end of the same object.  (Exception:
@@ -258,7 +258,7 @@ literals, which are concatenated with adjacent string literals.
 > *Modern compilers support `#pragma once`*
 
 That doesn't mean you should use it.  Even the GNU cpp manual doesn't
-recommend it.  The section on "Once-Only Headers" dosen't even mention
+recommend it.  The section on "Once-Only Headers" doesn't even mention
 `#pragma once`; it discusses the `#ifndef` idiom.  The following
 section, "Alternatives to Wrapper `#ifndef`", briefly mentions
 `#pragma once` but points out that it's not portable.
@@ -369,7 +369,7 @@ for functions to return `0` for success and some non-zero value
 (often `-1`) for failure.  In many cases different non-zero results
 denote different kinds of failure.  It's important to follow this
 convention when adding new functions to such an interface.  (`0`
-is used for success because typicallyi there's only one way for a
+is used for success because typically there's only one way for a
 function to succeed, and multiple ways for it to fail.)
 
 A function that tests whether some condition is true or false
