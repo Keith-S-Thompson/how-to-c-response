@@ -16,6 +16,10 @@ Update: A couple of people have found Matt's last name from other
 sites, but since he didn't choose to include it in his article I
 won't mention it here.
 
+Just to avoid any possible confusion, I am not
+[Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson),
+nor am I related to him.
+
 This article has been linked from
 [https://reddit.com/r/programming/](https://reddit.com/r/programming/),
 and the link is currently at the top of the page.  Lots of comments
