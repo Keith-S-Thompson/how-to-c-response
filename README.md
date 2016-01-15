@@ -111,7 +111,7 @@ least* 64 bits, and may or may not have padding bits.  `uint64_t` is
 And `unsigned long long` is a predefined C type.  Any C programmer
 will recognize it.
 
-Yuu can also use `uint_least64_t` -- which may or may not be the same
+You can also use `uint_least64_t` -- which may or may not be the same
 type as `unsigned long long`.
 
 > *The `<stdint.h>` types are more explicit, more exact in meaning,
@@ -135,7 +135,7 @@ or one of the predefined types.
 
 This is dangerously wrong.
 
-First off a minor point: `uintprt_t` is defined in `<stdint.h>`, not
+First off a minor point: `uintptr_t` is defined in `<stdint.h>`, not
 `<stddef.h>`.
 
 That's assuming it's defined at all.  An implementation where `void*`
