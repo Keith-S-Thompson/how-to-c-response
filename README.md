@@ -1,22 +1,34 @@
-# A critique of ["How to C in 2016"](https://matt.sh/howto-c) by "matt"
+# A critique of ["How to C in 2016"](https://matt.sh/howto-c) by Matt
 
-## Keith Thompson Sat 2016-01-09
+## Keith Thompson, Sat 2016-01-09, updated Fri 2016-01-15
 
-"matt" (whose web site does not mention his
+Matt (whose web site does not mention his
 last name as far as I can tell) has written an
 article "How to C in 2016".  It's been linked to from
 [Reddit](https://www.reddit.com/r/programming/comments/400v0b/how_to_c_as_of_2016/)
 and from [Hacker News](https://news.ycombinator.com/item?id=10864176);
 the latter is where I saw it.
 
+Update: Matt has been kind enough to add a link to this critique to
+his article.
+
+Update: A couple of people have found Matt's last name from other
+sites, but since he didn't choose to include it in his article I
+won't mention it here.
+
+This article has been linked from
+[https://reddit.com/r/programming/](https://reddit.com/r/programming/),
+and the link is currently at the top of the page.  Lots of comments
+there, some of them even constructive.
+
 As is inevitable for anything expressing opinions about the C language,
 there are some things I disagree with.  This critique is intended
 to be *constructive* criticism.  It's entirely possible that in some
-cases matt is right and I'm wrong.
+cases Matt is right and I'm wrong.
 
-I haven't quoted matt's entire article.  In particular, I've omitted
+I haven't quoted Matt's entire article.  In particular, I've omitted
 some material that I agree with.  I suggest reading this critique in
-parallel with matt's article.
+parallel with Matt's article.
 
 > *The first rule of C is don't write C if you can avoid it.*
 
@@ -286,7 +298,7 @@ members to zero, is not guaranteed to set floating-piont members to
 > *C99 allows variable length array initializers*
 
 No, C99 doesn't allow *initializers* for VLAs (variable length arrays).
-But matt isn't actually talking about VLA initializers, just about
+But Matt isn't actually talking about VLA initializers, just about
 VLAs.
 
 VLAs are controversial.  Unlike `malloc`, VLAs provide no mechanism
@@ -317,7 +329,7 @@ some variable size N is no more dangerous than a fixed-length array of
 the same size.  And it's common to define a fixed-length array that's
 bigger than it needs to be to ensure that you use *part* of it to store
 your actual data.  With a VLA, you can allocate just what you need.
-I agree with matt's advice here.
+I agree with Matt's advice here.
 
 Except for one thing: C11 made VLAs optional.  I doubt that many C11
 compilers will actually decide not to implement them, except perhaps
@@ -345,7 +357,7 @@ standard library.  (But `len` should be `size_t`, not `uint32_t`.)
 > function, you save the users of your function from having to think
 > about abstractions inside your own library.*
 
-A small quibble: There's no cast in matt's function.  There's an
+A small quibble: There's no cast in Matt's function.  There's an
 implicit conversion from `void*` to `uint8_t*`.
 
 > *Some readers have pointed out alignment problems with this example.*
