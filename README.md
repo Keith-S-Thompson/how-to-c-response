@@ -111,7 +111,7 @@ least* 64 bits, and may or may not have padding bits.  `uint64_t` is
 And `unsigned long long` is a predefined C type.  Any C programmer
 will recognize it.
 
-Yuu can also use `uint_least64_t` -- which may or may not be the same
+You can also use `uint_least64_t` -- which may or may not be the same
 type as `unsigned long long`.
 
 > *The `<stdint.h>` types are more explicit, more exact in meaning,
