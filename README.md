@@ -296,7 +296,7 @@ reliable and portable.
 This gets a bit tricky.  Usually there's no reason to care about
 padding bytes.  If you do, then yes, `memset` is the way to zero them.
 But zeroing a structure with `memset`, though it will set any integer
-members to zero, is not guaranteed to set floating-piont members to
+members to zero, is not guaranteed to set floating-point members to
 `0.0` or pointers to `NULL` (though it will on most systems).
 
 > *C99 allows variable length array initializers*
