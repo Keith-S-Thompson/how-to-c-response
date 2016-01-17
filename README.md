@@ -62,6 +62,62 @@ nothing wrong with using `int`.  (Or you can use `int_least16_t`,
 which may well be the same type, but IMHO that's more verbose than
 it needs to be.)
 
+However, there are always implicit assumptions in code regarding the logically valid bounds and/or signed-ness of the data being stored within an `int`. Documenting them explicitly as an inline comment is a good practice.
+
+    /* no. of columns ranges within 0-80 */
+    int column;
+
+Better yet, skip the standard data-types completely and use `typedefs`. This improves readability by providing a context to person reading the code about the use of the integer. Also this enables static-analysers (even compilers? <sup>[citation needed]</sup>) to perform strong type-checks to identify/report any [accidental assignments between two integers of different contexts](http://www.gimpel.com/html/strong.htm).
+
+For example:
+
+    typedef int Count;
+    typedef int Bool;
+    Count n;
+    Bool stop;
+        .
+        .
+        .
+    n = stop ;  /* strong type-checking can catch this mistake */
+
+Such strong type-checking can be extended to even [**opaque pointers**](https://en.wikipedia.org/wiki/Opaque_pointer) in C. (Source: [StackOverflow](http://stackoverflow.com/a/376478/319204))
+
+Instead of
+
+    typedef void* FOOHANDLE;
+    typedef void* BARHANDLE;
+
+...one does...
+
+    #define DECLARE_HANDLE(name) struct name##__ { int unused; }; \
+                                 typedef struct name##__ *name
+    DECLARE_HANDLE(FOOHANDLE);
+    DECLARE_HANDLE(BARHANDLE);
+
+...and thus...
+
+    FOOHANDLE make_foo();
+    BARHANDLE make_bar();
+    void do_bar(BARHANDLE);
+     
+    FOOHANDLE foo = make_foo();  /* OK */
+    BARHANDLE bar = foo;         /* ERROR! */
+    do_bar(foo);                 /* ERROR! */
+
+Finally, programming hardware almost always involved registers of fixed size known beforehand. When C is used in a "close-to-metal" context like a bootloader or a kernel, using proper qualified integer types (eg. `uint32_t`, `uint64_t`) is required to ensure proper functionality. Better yet, one should use the above technique to typedef a register type appropriately.
+
+    typedef uint32_t reg32;
+    typedef uint64_t reg64;
+
+Code with explicit types has the added advantage of being easier to maintain.  
+(understanding, porting is easier compared to code that uses standard types only).
+
+When presented with a codebase with explicit types,  
+- all the assumptions of the type sizes are explicitly captured.
+- similar data types in different logical contexts are referred to using distinct typedefs.
+
+Hence it is easier to accurately estimate the effort required to port such a codebase.
+
 > *For modern programs, you should `#include <stdint.h>` then use standard types.*
 
 The fact that `int` doesn't have "std" in its name doesn't make it
