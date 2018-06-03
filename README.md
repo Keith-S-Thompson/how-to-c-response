@@ -231,11 +231,11 @@ object.  Most modern systems have monolithic address spaces, so the
 theoretical maximum size of an object is the same as the size of the
 entire memory space -- but the C standard very carefully does not
 require this.  You could have a 64-bit system where no object can be
-bigger than 32 bits, for example.
+bigger than 2<sup>32</sup> bytes, for example.
 
 By emphasizing "modern" systems, you ignore both old systems (like
-the old x86 systems that exposed segmented addressing with "near" and
-"far" pointers) and possible future systems that might be perfectly
+the old x86 systems that exposed segmented addressing with "`near`" and
+"`far`" pointers) and possible future systems that might be perfectly
 compatible with the C standard while violating "modern" assumptions.
 
 > *You should never cast types during printing. You should use proper
