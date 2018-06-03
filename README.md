@@ -1,6 +1,6 @@
 # A critique of ["How to C in 2016"](https://matt.sh/howto-c) by Matt
 
-## Keith Thompson, Sat 2016-01-09, updated Fri 2016-01-15
+## Keith Thompson, Sat 2016-01-09, updated Fri 2016-01-15, Sun 2018-06-03
 
 Matt (whose web site does not mention his
 last name as far as I can tell) has written an
