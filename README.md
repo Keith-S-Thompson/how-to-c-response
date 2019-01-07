@@ -1,6 +1,6 @@
 # A critique of ["How to C in 2016"](https://matt.sh/howto-c) by Matt
 
-## Keith Thompson, Sat 2016-01-09, updated Fri 2016-01-15, Sun 2018-06-03
+## Keith Thompson, Sat 2016-01-09, updated Fri 2016-01-15, Sun 2018-06-03, Mon 2019-01-07
 
 Matt (whose web site does not mention his
 last name as far as I can tell) has written an
@@ -445,3 +445,18 @@ that might be valid.
 
 On the other hand, if all-bits-zero happens to be a reasonable initial
 value, `calloc` might be a good approach.
+
+**UPDATE** Mon 2019-01-07
+In [issue #10](https://github.com/Keith-S-Thompson/how-to-c-response/issues/10),
+[galegosimpatico](https://github.com/galegosimpatico) asks why I
+suggested using the `[u]int_leastN_t` types but didn't mention the
+`[u]intfastN_t` types.  That's a good point.  In some cases I was
+referring specifically to a type of *at least* some particular size,
+but it can certainly make sense to use one of the `fast` types if
+speed is more important than saving space.  For a single object, the
+`fast` types are almost certainly more appropriate (or you can just
+use the predefined types like `int`, or `size_t` if you're representing
+object sizes).  The `least` types have advantages for large arrays.
+
+Typically, on a modern 64-bit system, the `fast` types other than
+`[u]int_fast8_t` are all 64 bits.
