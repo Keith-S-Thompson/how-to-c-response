@@ -144,7 +144,7 @@ example when you need to conform to some externally imposed format.
 (Sometimes you also need a particular endianness, alignment, and so
 forth; C's `<stdint.h>` doesn't let you specify those.)  But more
 often all you need is a particular *range* of values.  For that,
-you can use either the `[u]int_leastN_t` or `[u]int_leastN_t` types,
+you can use either the `[u]int_leastN_t` or `[u]int_fastN_t` types,
 or one of the predefined types.
 
 > *The correct type for pointer math is `uintptr_t` defined in `<stddef.h>`.*
